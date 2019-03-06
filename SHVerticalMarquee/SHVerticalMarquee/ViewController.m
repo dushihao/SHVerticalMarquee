@@ -28,9 +28,9 @@ static NSInteger const kVisibleItemCount = 2;
     NSArray *marqueeItemArray = @[
                                   [SHMarqueeItem itemWithContent:@"bala bala bala"],
                                   [SHMarqueeItem itemWithContent:@"哦豁！哦豁！哦豁！"],
-                                  [SHMarqueeItem itemWithContent:@"动次 动次 动次"],
-                                  [SHMarqueeItem itemWithContent:@"打次 打次 打次"],
-                                  [SHMarqueeItem itemWithContent:@"-------------"],
+                                  [SHMarqueeItem itemWithContent:@"动次 打次 动次"],
+                                  [SHMarqueeItem itemWithContent:@"鬼刀一开看不见"],
+                                  [SHMarqueeItem itemWithContent:@"走位 走位"],
                                   ];
     return marqueeItemArray;
 }
@@ -42,7 +42,8 @@ static NSInteger const kVisibleItemCount = 2;
         _verticalMarquee = [SHVerticalMarquee marqueeWithFrame:CGRectMake(0, 100, CGRectGetWidth(self.view.bounds), kVisibleItemCount*kItemHeight) visibleItemCount:kVisibleItemCount delegateDataSource:self];
         _verticalMarquee.layer.borderColor = [UIColor blackColor].CGColor;
         _verticalMarquee.layer.borderWidth = 1;
-        _verticalMarquee.animationStyle = SHScrollAnimationStyleContinuity;
+        // 滚动类型
+//        _verticalMarquee.animationStyle = SHScrollAnimationStyleContinuity;
     }
     return _verticalMarquee;
 }

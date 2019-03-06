@@ -54,7 +54,7 @@
     self.titleLabel.frame = CGRectMake(15, 5, 40, marqueeViewHeight-10);
     self.titleLabel.layer.cornerRadius = 3;
     self.titleLabel.layer.masksToBounds = YES;
-    self.messageButton.frame = CGRectMake(85, 0, marqueeViewWidth - 85, marqueeViewHeight);
+    self.messageButton.frame = CGRectMake(65, 0, marqueeViewWidth - 85, marqueeViewHeight);
 }
 
 - (void)buttonClick:(UIButton *)sender {

@@ -9,6 +9,8 @@
 #import "SHVerticalMarquee.h"
 #import "SHMArqueeItemView.h"
 
+static CGFloat const kPadPerFrame = 0.2;
+
 @interface SHVerticalMarquee ()
 
 @property (nonatomic, strong) CADisplayLink *scrollTimer;
@@ -107,7 +109,7 @@
 
 - (CGRect)resetTopFrame:(CGRect)frame {
     CGFloat itemHeight = CGRectGetHeight(self.bounds) / self.visibelItemCount;
-    frame.origin.y -= 0.25;
+//    frame.origin.y -= kPadPerFrame;
     if (frame.origin.y <= -itemHeight) {
         SHMArqueeItemView *topItemView = [self getTopItemView];
         if (topItemView) {
@@ -132,7 +134,7 @@
     for (SHMArqueeItemView *itemView in self.itemViews) {
         itemView.frame = ({
             CGRect frame = itemView.frame;
-            frame.origin.y -= 0.25;
+            frame.origin.y -= kPadPerFrame;
             frame = [self resetTopFrame:frame];
             frame;
         });
